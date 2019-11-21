@@ -34,8 +34,8 @@ variable "address_space_map" {
   description = "A map from environment to a comma-delimited list of the address space"
   type = "map"
 default = {
-    dev     = "10.0.0.0/16"
-    qa      = "10.1.0.0/16"
+    dev     = ["10.0.0.0/16"]
+    qa      = ["10.1.0.0/16"]
   }
 }
 output "address_spaces" {
