@@ -16,7 +16,7 @@ default = {
 }
 output "subnets" {
   value = ["${split(",", var.subnet_map[var.environment])}"]
-} 
+}
 
 variable "address_map" {
   description = "A map from environment to a comma-delimited list of the addresses"
@@ -28,8 +28,32 @@ default = {
 }
 output "addresses" {
   value = ["${var.address_map[var.environment]}"]
-} 
- 
+}
+
+variable "address_space_map" {
+  description = "A map from environment to a comma-delimited list of the address space"
+  type = "map"
+default = {
+    dev     = "10.0.0.0/16"
+    qa      = "10.1.0.0/16"
+  }
+}
+output "address_spaces" {
+  value = ["${var.address_space_map[var.environment]}"]
+}
+
+variable "dns_servers_map" {
+  description = "A map from environment to a comma-delimited list of the dns servers"
+  type = "map"
+default = {
+    dev     = ["10.0.0.4", "10.0.0.5"]
+    qa      = ["10.1.0.4", "10.1.0.5"]
+  }
+}
+output "dns_servers" {
+  value = ["${var.dns_servers_map[var.environment]}"]
+}
+
 variable "instance_type_map" {
   description = "A map from environment to the type of EC2 instance"
   type = "map"
@@ -40,5 +64,4 @@ variable "instance_type_map" {
 }
 output "instance_type" {
   value = "${var.instance_type_map[var.size]}"
-} 
- 
+}
