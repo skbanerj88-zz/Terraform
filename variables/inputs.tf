@@ -9,7 +9,7 @@ variable "size" {
 variable "subnet_map" {
   description = "A map from environment to a comma-delimited list of the subnets"
   type = "map"
-default = {
+  default = {
     dev     = "subnet-c59403abe,subnet-69483bdb33c"
     qa      = "subnet-e48unjd9a1,subnet-c085uhd93a4"
   }
@@ -21,7 +21,7 @@ output "subnets" {
 variable "address_map" {
   description = "A map from environment to a comma-delimited list of the addresses"
   type = "map"
-default = {
+  default = {
     dev     = "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24"
     qa      = "10.1.1.0/24,10.1.1.0/24,10.1.1.0/24"
   }
@@ -33,7 +33,7 @@ output "addresses" {
 variable "address_space_map" {
   description = "A map from environment to a comma-delimited list of the address space"
   type = "map"
-default = {
+  default = {
     dev     = ["10.0.0.0/16"]
     qa      = ["10.1.0.0/16"]
   }
@@ -45,7 +45,7 @@ output "address_spaces" {
 variable "dns_servers_map" {
   description = "A map from environment to a comma-delimited list of the dns servers"
   type = "map"
-default = {
+  default = {
     dev     = ["10.0.0.4", "10.0.0.5"]
     qa      = ["10.1.0.4", "10.1.0.5"]
   }
