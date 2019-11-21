@@ -65,5 +65,3 @@ variable "instance_type_map" {
 output "instance_type" {
   value = "${var.instance_type_map[var.size]}"
 }
-
-hello
